@@ -7,10 +7,15 @@ const App = () => {
     { id:'e2', title: 'Car Insurance', amount: 1000, date: new Date(2023, 3, 9) },
     { id:'e3', title: 'House Rent', amount: 8000, date: new Date(2023, 3, 29) },
   ];
+
+  const addExpenseHandler = (expense) => {
+    console.log('In app.js');
+    console.log(expense)
+  }
   return (
     <div>
-      <NewExpense />
-      <Expenses items={expenses} />
+      <NewExpense onAddExpense={addExpenseHandler}/>
+      <Expenses items={expenses}  />
     </div>
   );
 }
